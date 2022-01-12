@@ -4,23 +4,30 @@
 
         <form class="pt-5" action="{{route("comics.store")}}" method="post">
             @csrf
-           
+
+         
+            @if (!empty($errors->all()))
+            <div class="alert alert-danger" role="alert">
+                @foreach ($errors->all() as $item)
+                    <strong>{{$item}}</strong>
+                @endforeach
+                </div>
+            @endif
+          
         
             <div class="mb-3">
-              <label  class="form-label">Nome</label>
+              <label  class="form-label">Titolo</label>
               <input type="text" class="form-control" name="title" >
-        
-            
             </div>
 
             <div class="mb-3">
                 <label  class="form-label">Descrizione</label>
-                <input type="text" class="form-control" name="description" >
+                <input style=" height:150px" type="text" class="form-control" name="description" >
         
             </div>
 
             <div class="mb-3">
-                <label  class="form-label">Price</label>
+                <label  class="form-label">Prezzo</label>
                 <input type="text" class="form-control" name="price" >
             </div>
             <div class="mb-3">
@@ -29,19 +36,19 @@
             </div>
 
             <div class="mb-3">
-                <label  class="form-label">immagine</label>
+                <label  class="form-label">Immagine</label>
                 <input type="text" class="form-control" name="thumb" >
             </div>
 
             <div class="mb-3">
-                <label  class="form-label">tipo</label>
+                <label  class="form-label">Tipo</label>
                 <input type="text" class="form-control" name="type" >
             </div>
     
         
-            <div>
+            <div class="text-center">
               <button class="btn btn-secondary" type="reset ">Reset</button>
-              <button class="btn btn-success" type="submit">Crea</button>
+              <button class="btn btn-primary" type="submit">Crea</button>
             </div>
         
           </form>
