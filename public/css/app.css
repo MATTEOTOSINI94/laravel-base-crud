@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap);header .box-nav {
+  background-color: blue;
+  text-align: center;
+  padding: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+header .box-nav ul {
+  display: inline;
+}
+
+header .box-nav ul li {
+  display: inline;
+  padding: 15px;
+}
+
+header .box-nav ul li a {
+  font-size: 20px;
+  display: inline;
+  color: white;
+  text-decoration: none;
+}
+
+.box-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
