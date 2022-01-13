@@ -1,8 +1,11 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap);header .box-nav {
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap);body {
+  font-family: "Poppins", sans-serif;
+}
+
+header .box-nav {
   background-color: blue;
   text-align: center;
   padding: 25px;
-  font-family: "Poppins", sans-serif;
 }
 
 header .box-nav ul {
@@ -26,5 +29,22 @@ header .box-nav ul li a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.style-btn {
+  font-family: sans-serif;
+  font-size: 10px;
+  justify-content: space-evenly;
+  font-weight: bolder;
+}
+
+.box-card-style h5 {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.box-card-style p {
+  font-size: 10px;
 }
 

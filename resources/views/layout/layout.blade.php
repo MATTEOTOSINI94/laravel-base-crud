@@ -14,8 +14,8 @@
         <div class="box-nav">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="comics/">Fumetti</a></li>
-                <li><a href="comics/create">Aggiungi Fumetto</a></li>
+                <li><a href="/comics/">Fumetti</a></li>
+                <li><a href="{{route("comics.create")}}">Aggiungi Fumetto</a></li>
             </ul>
         </div>
     </header>
