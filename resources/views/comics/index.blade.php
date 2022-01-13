@@ -5,17 +5,22 @@
      
 
   @foreach ($fumetti as $key =>  $fumetto)
-  <a style="text-decoration: none" href="comics/{{$key+1}}">
+
   <div class="col" >
       <div class="card">
+        <a style="text-decoration: none" href="comics/{{$fumetto->id}}">
         <img src="{{$fumetto->thumb}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{$fumetto["title"]}}</h5>
           <p style="color: black" class="card-text box-text">{{$fumetto["description"]}}</p>
+          <div class="d-flex">
+            <a href="comics/{{$fumetto->id}}/edit">Modifica</a>
+          </div>
         </div>
+      </a>
       </div>
     </div>
-  </a>
+
   @endforeach
 
 </div>

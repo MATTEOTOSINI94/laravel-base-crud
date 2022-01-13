@@ -39,7 +39,7 @@ class ComicController extends Controller
     {   $request->validate([
         'title'=>'required|min:5',
         'description'=>'required|min:20',
-        'thumb'=>'image|required',
+        'thumb'=>'required',
         'price'=>'required',
         'type'=>'required|min:3',
     ]);
@@ -56,7 +56,7 @@ class ComicController extends Controller
         $newComics->save();
         dump($request);
 
-        return redirect()->route("comics.show", $newComics->id);
+        return redirect()->route("comics.show", $newComics->id)->with("msg","Fumetto Creato");
     }
 
     /**
@@ -77,9 +77,13 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //  user/{user}/edit
     public function edit($id)
+
     {
-        //
+        $fumetto = Comic::findOrFail($id);
+        return view("comics.edit", ["fumetto"=>$fumetto]);
     }
 
     /**
@@ -89,9 +93,20 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $request->validate([
+            'title'=>'required|min:5',
+            'description'=>'required|min:20',
+            'thumb'=>'required',
+            'price'=>'required',
+            'type'=>'required|min:3',
+        ]);
+        
+        $data = $request->all();
+        $comic->update($data);
+    
+        return redirect()->route("comics.show",$comic->id)->with("msg","Fumetto modificato correttamente");
     }
 
     /**

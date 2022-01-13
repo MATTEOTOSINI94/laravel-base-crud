@@ -1,9 +1,13 @@
 @extends('layout/layout')
-@section('content')
-    
 
-        <form class="pt-5" action="{{route("comics.store")}}" method="post">
+@section('content')
+      
+
+        <h4 class="pt-3">Modifica fumetto {{$fumetto->title}}</h4>
+
+        <form class="pt-5" action="{{route("comics.update", $fumetto->id)}}" method="post">
             @csrf
+            @method("PUT")
 
          
             @if (!empty($errors->all()))
@@ -17,32 +21,38 @@
         
             <div class="mb-3">
               <label  class="form-label">Titolo</label>
-              <input type="text" class="form-control" name="title" >
+              <input type="text" class="form-control" name="title" 
+              value = {{$fumetto->title}}>
             </div>
 
             <div class="mb-3">
                 <label  class="form-label">Descrizione</label>
-                <input style=" height:150px" type="text" class="form-control" name="description" >
-        
+                <input style=" height:150px" type="text" class="form-control" name="description"
+                value = "{{$fumetto->description}}"> 
+                
             </div>
 
             <div class="mb-3">
                 <label  class="form-label">Prezzo</label>
-                <input type="text" class="form-control" name="price" >
+                <input type="text" class="form-control" name="price"
+                value = {{$fumetto->price}}>
             </div>
             <div class="mb-3">
                 <label  class="form-label">Serie</label>
-                <input type="text" class="form-control" name="series" >
+                <input type="text" class="form-control" name="series"
+                value = "{{$fumetto->series}}">
             </div>
 
             <div class="mb-3">
                 <label  class="form-label">Immagine</label>
-                <input type="url" class="form-control" name="thumb" >
+                <input type="url" class="form-control" name="thumb"
+                value = "{{$fumetto->thumb}}">
             </div>
 
             <div class="mb-3">
                 <label  class="form-label">Tipo</label>
-                <input type="text" class="form-control" name="type" >
+                <input type="text" class="form-control" name="type"
+                value = "{{$fumetto->type}}">
             </div>
     
         
