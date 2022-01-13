@@ -22,8 +22,8 @@
 
             <div class="mb-3">
                 <label  class="form-label">Descrizione</label>
-                <input style=" height:150px" type="text" class="form-control" name="description" >
-        
+                <textarea style=" height:150px" type="text" class="form-control" name="description" >
+                </textarea>
             </div>
 
             <div class="mb-3">

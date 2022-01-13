@@ -46,6 +46,42 @@ header{
     font-size: 10px;
     justify-content: space-evenly;
     font-weight: bolder;
+
+    a{
+    color: rgb(177, 177, 177);
+    border: 1px solid rgb(177, 177, 177);
+    font-weight: bolder;
+    border-radius: 20px;
+    padding: 7px;
+    background: linear-gradient(to left, white 50%, #1fad95 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+    color: #1fad95;
+    }
+
+    a:hover{
+        background-position: left;
+        color: white;
+    }
+
+    .btn-form-style{
+        border: 1px solid red;
+        font-weight: bolder;
+        border-radius: 20px;
+        padding: 7px;
+        background: linear-gradient(to left, white 50%, #bd0000 50%) right;
+        background-size: 200%;
+        transition: .5s ease-out;
+        color: red;
+
+        &:hover{
+            background-position: left;
+            color: white;
+        }
+    
+    }
+
+   
     
 }
 

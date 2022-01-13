@@ -27,9 +27,9 @@
 
             <div class="mb-3">
                 <label  class="form-label">Descrizione</label>
-                <input style=" height:150px" type="text" class="form-control" name="description"
-                value = "{{$fumetto->description}}"> 
-                
+                <textarea  rows="4" cols="50" style=" height:150px" type="text" class="form-control" name="description"> 
+                {{$fumetto->description}}
+            </textarea>
             </div>
 
             <div class="mb-3">

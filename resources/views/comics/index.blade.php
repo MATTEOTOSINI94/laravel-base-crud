@@ -18,14 +18,14 @@
           <p style="color: black" class="card-text box-text">{{$fumetto["description"]}}</p>
         </a>
           <div class="d-flex style-btn pt-2">
-            <a style="text-decoration: none" href="comics/{{$fumetto->id}}/edit">Modifica</a>
+            <a style="text-decoration: none" href="/comics/{{$fumetto->id}}/edit">Modifica</a>
 
             <form class="form-find" action="{{route('comics.destroy', $fumetto->id)}}" method="POST">
               @csrf
               @method("delete")
 
 
-              <button  style="background: transparent " class="border-0" type="submit"><span style="color: red">Elimina</span></button>
+              <button  class="btn-form-style" type="submit"><span >Elimina</span></button>
             </form>
 
          
